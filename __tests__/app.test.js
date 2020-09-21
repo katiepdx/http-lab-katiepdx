@@ -14,4 +14,10 @@ describe('server', () => {
       .get('/red');
     expect(response.text).toEqual('<html><body><h1>red</h1></body></html>');
   });
+
+  it('checks that the word green is returned as html in a h1', async() => {
+    const response = await request(app)
+      .get('/green');
+    expect(response.text).toEqual('<html><body><h1>green</h1></body></html>');
+  });
 });
