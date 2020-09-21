@@ -20,4 +20,10 @@ describe('server', () => {
       .get('/green');
     expect(response.text).toEqual('<html><body><h1>green</h1></body></html>');
   });
+
+  it('checks that the word blue is returned as html in a h1', async() => {
+    const response = await request(app)
+      .get('/blue');
+    expect(response.text).toEqual('<html><body><h1>blue</h1></body></html>');
+  });
 });
