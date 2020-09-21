@@ -26,4 +26,10 @@ describe('server', () => {
       .get('/blue');
     expect(response.text).toEqual('<html><body><h1>blue</h1></body></html>');
   });
+
+  it('checks that a plain text not found error is returned if route does not exist', async() => {
+    const response = await request(app)
+      .get('/purple');
+    expect(response.text).toEqual('Not Found');
+  });
 });
