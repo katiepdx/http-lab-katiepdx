@@ -9,6 +9,15 @@ describe('server', () => {
     expect(response.text).toEqual('hi');
   });
 
+  it('checks that the status code and plain text with req body is returned after making a POST req to /echo', async() => {
+    const response = await request(app)
+      .post('/echo')
+      .send('fjkdsajfkdlsajfkldsjfljdslfjsdkljfkldsjfkjsdklfjsdkljfklsdjfkldsjfkljsdklfjdskljfklsdjfklsdjklf');
+    
+    console.log(response);
+    expect(response.text).toEqual('fjkdsajfkdlsajfkldsjfljdslfjsdkljfkldsjfkjsdklfjsdkljfklsdjfkldsjfkljsdklfjdskljfklsdjfklsdjkl');
+  });
+
   it('checks that the word red is returned as html in a h1', async() => {
     const response = await request(app)
       .get('/red');
