@@ -22,5 +22,7 @@
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
 }
